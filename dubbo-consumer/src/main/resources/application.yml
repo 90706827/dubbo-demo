@@ -1,0 +1,12 @@
+server:
+  # 指定服务端口
+  port: 8081
+#dubbo:
+#  application:
+#    name: dubbo-consumer
+#  registry:
+#    address: nacos://localhost:8848?username=nacos&password=nacos
+#  consumer:
+#    timeout: 5000
+#    check: true
+#    retries: 1

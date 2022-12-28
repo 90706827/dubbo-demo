@@ -1,0 +1,12 @@
+#dubbo:
+#  application:
+#    name: dubbo-provider
+#  protocol:
+#    name: dubbo
+#    port: 20888
+#  registry:
+#    address: nacos://localhost:8848?username=nacos&password=nacos
+#  provider:
+#    retries: 1
+#    token: true
+#    timeout: 10000

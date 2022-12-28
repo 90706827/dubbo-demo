@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://dubbo.apache.org/schema/dubbo"
+       xmlns="http://www.springframework.org/schema/beans" xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://dubbo.apache.org/schema/dubbo http://dubbo.apache.org/schema/dubbo/dubbo.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+<!--    <context:property-placeholder/>-->
+    <dubbo:application name="dubbo-consumer"/>
+
+<!--    <dubbo:registry address="zookeeper://127.0.0.1:2181" timeout="5000" group="dubbo"/>
+    <dubbo:config-center  address="zookeeper://127.0.0.1:2181" timeout="5000" group="dubbo-config" />
+    <dubbo:metadata-report  address="zookeeper://127.0.0.1:2181" timeout="5000" group="dubbo-report"/>-->
+
+    <dubbo:registry address="nacos://localhost:8848" username="nacos" password="nacos"/>
+<!--    <dubbo:config-center  address="nacos://localhost:8848" username="nacos" password="nacos"  timeout="5000" group="dubbo-config"/>-->
+<!--    <dubbo:metadata-report  address="nacos://localhost:8848" username="nacos" password="nacos"  timeout="5000" group="dubbo-report"/>-->
+
+    <!--    <dubbo:protocol name="dubbo" port="-1"/>-->
+   <!-- <dubbo:consumer retries="1" check="true" timeout="12000"/>-->
+
+    <dubbo:reference id="userService"
+                     interface="com.qiangke.user.UserService"
+                     check="true"/>
+</beans>
